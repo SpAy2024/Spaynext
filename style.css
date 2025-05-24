@@ -102,6 +102,13 @@ p {
     margin: 0 5px;
   }
 }
+@media (max-width: 350px) {
+  .btn {
+    width: 50%;
+    font-size: 14px;
+    padding: 8px;
+  }
+}
 
 @media (max-width: 300px) {
   .btn {
