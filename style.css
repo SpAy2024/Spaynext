@@ -11,13 +11,13 @@ body {
 /* ===== CONTENEDOR ===== */
 .container {
   padding: 30px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
 /* ===== LOGO ===== */
 .logo {
-  width: 180px;
+  width: 200px;
   margin-bottom: 20px;
   animation: fadeIn 1.2s ease-in-out;
 }
@@ -25,7 +25,7 @@ body {
 /* ===== TITULO ===== */
 h1 {
   color: #ff1744;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 15px;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
@@ -33,49 +33,56 @@ h1 {
 
 /* ===== PARRAFO ===== */
 p {
-  font-size: 17px;
-  line-height: 1.6;
-  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 750px;
   margin: auto;
   color: #ddd;
 }
 
 /* ===== BOTONES ===== */
 .btn {
-  display: inline-block;
-  margin: 15px 10px;
-  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 12px;
+  padding: 14px 30px;
   background: linear-gradient(135deg, #ff1744, #ff6f61);
   color: white;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 35px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 17px;
   box-shadow: 0 5px 15px rgba(255, 23, 68, 0.4);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.2s ease-in-out;
+  animation: pulse 2s infinite;
+}
+.btn i {
+  font-size: 18px;
 }
 .btn:hover {
   background: linear-gradient(135deg, #ff6f61, #ff1744);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 23, 68, 0.5);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 23, 68, 0.6);
 }
 
 /* ===== IMÁGENES ===== */
 .screenshots img {
-  width: 80%;
-  max-width: 450px;
-  margin: 15px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  width: 95%;
+  max-width: 650px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
   transition: transform 0.3s ease;
 }
 .screenshots img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 /* ===== ICONOS SOCIALES ===== */
 .social-links {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 .social-links i {
   color: white;
@@ -88,27 +95,32 @@ p {
 }
 .social-links i:hover {
   background: #ff1744;
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
 }
 
-/* ===== ANIMACIÓN ===== */
+/* ===== ANIMACIONES ===== */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
 
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  h1 { font-size: 1.8rem; }
-  p { font-size: 15px; padding: 0 10px; }
+  h1 { font-size: 2rem; }
+  p { font-size: 16px; padding: 0 10px; }
   .btn { font-size: 15px; padding: 12px 20px; }
 }
 
 @media (max-width: 480px) {
-  .logo { width: 130px; }
-  .btn { display: block; margin: 12px auto; width: 70%; }
+  .logo { width: 140px; }
+  .btn { display: block; margin: 12px auto; width: 80%; }
   .social-links i { font-size: 1.5rem; margin: 0 8px; }
 }
-
 
 
