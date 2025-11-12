@@ -1,20 +1,40 @@
 /* ===== ESTILO GENERAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  
   color: #fff;
   font-family: 'Poppins', Arial, sans-serif;
   background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
   margin: 0;
   padding: 0;
   text-align: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 23, 68, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 111, 97, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.1) 0%, transparent 50%);
+  z-index: -1;
 }
 
 /* ===== CONTENEDOR ===== */
 .container {
-  padding: 30px;
+  padding: 30px 20px;
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* ===== LOGO ===== */
@@ -33,13 +53,29 @@ h1 {
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
+h2 {
+  color: #ff6f61;
+  font-size: 2rem;
+  margin: 30px 0 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 /* ===== PARRAFO ===== */
 p {
   font-size: 18px;
   line-height: 1.7;
   max-width: 750px;
-  margin: auto;
+  margin: 0 auto 20px;
   color: #ddd;
+}
+
+.highlight {
+  background: rgba(255, 23, 68, 0.2);
+  padding: 15px 20px;
+  border-radius: 12px;
+  border-left: 4px solid #ff1744;
+  margin: 25px auto;
+  max-width: 750px;
 }
 
 /* ===== BOTONES ===== */
@@ -59,9 +95,11 @@ p {
   transition: all 0.3s ease, transform 0.2s ease-in-out;
   animation: pulse 2s infinite;
 }
+
 .btn i {
   font-size: 18px;
 }
+
 .btn:hover {
   background: linear-gradient(135deg, #ff6f61, #ff1744);
   transform: translateY(-4px) scale(1.05);
@@ -69,6 +107,10 @@ p {
 }
 
 /* ===== IMÁGENES ===== */
+.screenshots {
+  margin: 30px auto;
+}
+
 .screenshots img {
   width: 95%;
   max-width: 650px;
@@ -78,23 +120,56 @@ p {
   box-shadow: 0 0 25px rgba(0,0,0,0.7);
   transition: transform 0.3s ease;
 }
+
 .screenshots img:hover {
   transform: scale(1.05);
+}
+
+/* ===== SECCIÓN DE COMENTARIOS ===== */
+.comments-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 750px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.comments-section h2 {
+  margin-top: 0;
+  color: #ff6f61;
+}
+
+.comments-section p {
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 /* ===== ICONOS SOCIALES ===== */
 .social-links {
   margin-top: 25px;
 }
+
+.social-links a {
+  display: inline-block;
+  margin: 0 12px;
+}
+
 .social-links i {
   color: white;
   font-size: 2rem;
-  margin: 0 12px;
   padding: 12px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .social-links i:hover {
   background: #ff1744;
   transform: scale(1.1) rotate(5deg);
@@ -102,27 +177,64 @@ p {
 
 /* ===== ANIMACIONES ===== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from { 
+    opacity: 0; 
+    transform: scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.05); 
+  }
+  100% { 
+    transform: scale(1); 
+  }
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  p { font-size: 16px; padding: 0 10px; }
-  .btn { font-size: 15px; padding: 12px 20px; }
+  h1 { 
+    font-size: 2rem; 
+  }
+  h2 { 
+    font-size: 1.7rem; 
+  }
+  p { 
+    font-size: 16px; 
+    padding: 0 10px; 
+  }
+  .btn { 
+    font-size: 15px; 
+    padding: 12px 20px; 
+  }
+  .comments-section { 
+    padding: 20px 15px; 
+  }
 }
 
 @media (max-width: 480px) {
-  .logo { width: 140px; }
-  .btn { display: block; margin: 12px auto; width: 80%; }
-  .social-links i { font-size: 1.5rem; margin: 0 8px; }
+  .logo { 
+    width: 140px; 
+  }
+  .btn { 
+    display: block; 
+    margin: 12px auto; 
+    width: 80%; 
+  }
+  .social-links i { 
+    font-size: 1.5rem; 
+    margin: 0 8px; 
+  }
+  .social-links a { 
+    margin: 0 8px; 
+  }
 }
-
 
