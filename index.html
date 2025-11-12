@@ -1,10 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <title>SpayNext</title>
   <link rel="stylesheet" href="style.css">
 
@@ -27,31 +26,41 @@
   <meta property="og:url" content="https://spay2024.github.io/Spaynext/" />
   <meta property="og:type" content="website" />
 
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  
+  <!-- Facebook SDK para comentarios -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v18.0"></script>
 </head>
 <body>
-
-  <!-- CONTENEDOR DE PARTICULAS -->
-  <div id="particles-js"></div>
 
   <div class="container">
     <img src="https://i.postimg.cc/nckQ0v80/LOGO-MOVIE-NUEVO-2024-02.png" alt="SpayNext" class="logo">
     <h1>¡Bienvenido a SpayCine!</h1>
+    
+    <div class="highlight">
+      <p>
+        <strong>SpayNext</strong> es tu app ideal para disfrutar de <strong>películas, series y ánime gratis</strong> en Android. Disfruta de <strong>calidad HD</strong> sin interrupciones, con <strong>actualizaciones constantes</strong> y múltiples servidores disponibles.  
+      </p>
+    </div>
+    
     <p>
-      <strong>SpayNext</strong> es tu app ideal para disfrutar de <strong>películas, series y ánime gratis</strong> en Android. Disfruta de <strong>calidad HD</strong> sin interrupciones, con <strong>actualizaciones constantes</strong> y múltiples servidores disponibles.  
-      <br><br>
       Accede a través de nuestros 3 servidores principales: <strong>FileMoon, StreamHG y EarnVids</strong>, para una experiencia estable y rápida.  
-      <br><br>
-      Compatible con <strong>Picture-in-Picture (PiP)</strong> para que sigas viendo mientras usas otras apps, y con <strong>Chromecast</strong> para compartir el contenido en tu TV fácilmente.  
-      <br><br>
-      Disfruta del mejor contenido <strong>cuando y donde quieras</strong>.  
-      <br><br>
-      ¡<strong>Ya disponible en Play Store</strong>!
     </p>
+    
+    <p>
+      Compatible con <strong>Picture-in-Picture (PiP)</strong> para que sigas viendo mientras usas otras apps, y con <strong>Chromecast</strong> para compartir el contenido en tu TV fácilmente.  
+    </p>
+    
+    <p>
+      Disfruta del mejor contenido <strong>cuando y donde quieras</strong>.  
+    </p>
+    
+    <div class="highlight">
+      <p>
+        ¡<strong>Ya disponible en Play Store</strong>!
+      </p>
+    </div>
 
-     Botón Mediafire 
+    <!-- Botón Mediafire -->
     <a href="https://www.mediafire.com/file/4zhkysdzllnrdld/SpayCine_v3.9.26.apk/file" class="btn">
       <i class="fa-solid fa-download"></i> Descargar Apk V29.3.9
     </a>
@@ -63,22 +72,36 @@
 
     <!-- Captura más grande -->
     <div class="screenshots">
-      <img src="https://i.postimg.cc/pVJ7LwRT/Spay-Cine2.png" alt="Captura 1">
+      <img src="https://i.postimg.cc/pVJ7LwRT/Spay-Cine2.png" alt="Captura de pantalla de SpayCine">
+    </div>
+
+    <!-- Sección de comentarios de Facebook -->
+    <div class="comments-section">
+      <h2>Comentarios de la comunidad</h2>
+      <p>¿Ya usas SpayNext? ¡Cuéntanos tu experiencia!</p>
+      <div class="fb-comments" 
+           data-href="https://spay2024.github.io/Spaynext/" 
+           data-width="100%" 
+           data-numposts="5"
+           data-colorscheme="dark">
+      </div>
     </div>
 
     <div class="social-links">
       <!-- Telegram -->
-      <a href="https://t.me/spaynextApp" target="_blank">
+      <a href="https://t.me/spaynextApp" target="_blank" aria-label="Telegram">
         <i class="fa-brands fa-telegram"></i>
       </a>
       <!-- WhatsApp -->
-      <a href="https://chat.whatsapp.com/HM6k1BQ3EVSFhy9U95Jkxp" target="_blank">
+      <a href="https://chat.whatsapp.com/HM6k1BQ3EVSFhy9U95Jkxp" target="_blank" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://spay2024.github.io/Spaynext/" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook"></i>
       </a>
     </div>
   </div>
-
- 
 
 </body>
 </html>
