@@ -452,6 +452,7 @@
       align-items: center;
       gap: 12px;
       transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     .modal-download-btn:hover {
@@ -708,10 +709,10 @@
           <p class="hero-description" id="heroDescription"></p>
           <div class="hero-meta" id="heroMeta"></div>
           <div class="hero-buttons">
-            <button class="btn-play" id="heroPlayBtn">
+            <a href="https://play.google.com/store/apps/details?id=com.companyname.spay" target="_blank" class="btn-play" id="heroPlayBtn">
               <i class="fa-solid fa-download"></i> Descargar ahora
-            </button>
-            <button class="btn-info">
+            </a>
+            <button class="btn-info" onclick="document.getElementById('caracteristicas').scrollIntoView({behavior: 'smooth'})">
               <i class="fa-solid fa-info-circle"></i> Más información
             </button>
           </div>
@@ -789,7 +790,7 @@
         <div class="download-card">
           <h2 style="margin-bottom: 16px;">¿Listo para empezar?</h2>
           <p style="margin-bottom: 24px;">Descarga SpayNext ahora y disfruta del mejor contenido sin pagar nada</p>
-          <a href="https://play.google.com/store/apps/details?id=com.companyname.spay" class="btn-playstore">
+          <a href="https://play.google.com/store/apps/details?id=com.companyname.spay" target="_blank" class="btn-playstore">
             <i class="fa-brands fa-google-play" style="font-size: 28px;"></i>
             <div>
               <span style="font-size: 12px; display: block;">Descargar en</span>
@@ -816,9 +817,9 @@
         <h2 class="modal-title" id="modalTitle"></h2>
         <div class="modal-meta" id="modalMeta"></div>
         <p class="modal-overview" id="modalOverview"></p>
-        <button class="modal-download-btn" id="modalDownloadBtn">
+        <a href="https://play.google.com/store/apps/details?id=com.companyname.spay" target="_blank" class="modal-download-btn" id="modalDownloadBtn">
           <i class="fa-solid fa-download"></i> Descargar ahora
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -942,11 +943,6 @@
       document.body.style.overflow = '';
     }
 
-    // Función de descarga
-    function downloadMovie(movie) {
-      alert(`🔄 Preparando descarga de: ${movie.title}\n\n📱 La descarga comenzará en la app SpayNext\n💾 Formato: HD (1080p)\n⚡ Tamaño aproximado: 1.5GB\n\n¡Descarga la app desde Google Play para verla offline!`);
-    }
-
     // Cargar Top 10 películas
     async function loadTop10() {
       try {
@@ -985,20 +981,6 @@
         console.error('Error loading popular movies:', error);
       }
     }
-
-    // Eventos
-    document.getElementById('heroPlayBtn')?.addEventListener('click', () => {
-      if (currentHeroMovie) {
-        downloadMovie(currentHeroMovie);
-      }
-    });
-
-    document.getElementById('modalDownloadBtn')?.addEventListener('click', () => {
-      if (currentModalMovie) {
-        downloadMovie(currentModalMovie);
-        closeModal();
-      }
-    });
 
     // Cerrar modal al hacer clic fuera
     document.getElementById('movieModal')?.addEventListener('click', (e) => {
