@@ -36,11 +36,7 @@
       --text-primary: #ffffff;
       --text-secondary: #a3a3a3;
       --text-tertiary: #6b6b6b;
-      --ai-purple: #8b5cf6;
-      --ai-purple-dark: #6d28d9;
-      --ai-purple-light: #c4b5fd;
       --gradient-red: linear-gradient(135deg, #E50914 0%, #b8070f 100%);
-      --gradient-ai: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
       --gradient-dark: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.8) 50%, rgba(10,10,10,1) 100%);
       --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
       --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
@@ -48,8 +44,6 @@
       --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
       --shadow-red: 0 4px 24px rgba(229,9,20,0.35);
       --shadow-red-strong: 0 8px 40px rgba(229,9,20,0.5);
-      --shadow-ai: 0 4px 24px rgba(139,92,246,0.35);
-      --shadow-ai-strong: 0 8px 40px rgba(139,92,246,0.55);
       --border-radius: 12px;
       --border-radius-lg: 20px;
       --border-radius-xl: 28px;
@@ -89,6 +83,7 @@
       color: white;
     }
 
+    /* Scrollbar global */
     ::-webkit-scrollbar {
       width: 10px;
       height: 8px;
@@ -104,7 +99,7 @@
       background: var(--netflix-red);
     }
 
-    /* ===== NAVBAR ===== */
+    /* ===== NAVBAR PROFESIONAL ===== */
     .navbar {
       position: fixed;
       top: 0;
@@ -200,7 +195,7 @@
       background: var(--netflix-red-hover) !important;
     }
 
-    /* ===== HERO ===== */
+    /* ===== HERO SECTION ===== */
     .hero {
       min-height: 100vh;
       position: relative;
@@ -256,6 +251,10 @@
       color: var(--netflix-red);
       border: 1px solid rgba(229, 9, 20, 0.25);
       text-transform: uppercase;
+    }
+
+    .hero-badge i {
+      font-size: 14px;
     }
 
     .hero-badge .pulse-dot {
@@ -333,7 +332,6 @@
       border: none;
       text-decoration: none;
       white-space: nowrap;
-      font-family: inherit;
     }
 
     .btn-primary {
@@ -360,7 +358,7 @@
       transform: translateY(-2px);
     }
 
-    /* ===== SECCIONES DE CONTENIDO ===== */
+    /* ===== SECCIÓN DE CONTENIDO ===== */
     .content-section {
       padding: 50px 0;
       position: relative;
@@ -396,7 +394,6 @@
       justify-content: center;
       font-size: 18px;
       box-shadow: var(--shadow-red);
-      flex-shrink: 0;
     }
 
     .section-header h2 {
@@ -439,7 +436,6 @@
       background: var(--netflix-red);
     }
 
-    /* ===== TARJETAS DE PELÍCULAS ===== */
     .movie-card {
       flex: 0 0 auto;
       width: 180px;
@@ -563,7 +559,7 @@
       color: var(--text-primary);
     }
 
-    /* ===== SKELETON ===== */
+    /* ===== SKELETON LOADER ===== */
     .skeleton-card {
       flex: 0 0 auto;
       width: 180px;
@@ -585,205 +581,6 @@
       background: linear-gradient(90deg, #1a1a1a 25%, #252525 50%, #1a1a1a 75%);
       background-size: 200% 100%;
       animation: shimmer 1.5s infinite;
-    }
-
-    /* ===== DRAMAS IA SECTION ===== */
-    .dramas-section {
-      position: relative;
-      background: linear-gradient(180deg, var(--netflix-black) 0%, rgba(109,40,217,0.08) 50%, var(--netflix-black) 100%);
-    }
-
-    .dramas-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(139,92,246,0.5), transparent);
-    }
-
-    .ai-badge {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      padding: 3px 8px;
-      margin-left: 8px;
-      border-radius: 4px;
-      background: var(--gradient-ai);
-      color: white;
-      vertical-align: middle;
-      animation: aiPulse 2s infinite;
-      box-shadow: 0 0 20px rgba(139,92,246,0.5);
-    }
-
-    @keyframes aiPulse {
-      0%, 100% { box-shadow: 0 0 15px rgba(139,92,246,0.4); }
-      50% { box-shadow: 0 0 30px rgba(139,92,246,0.8); }
-    }
-
-    .ai-filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .ai-filter {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--text-secondary);
-      padding: 7px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      font-family: inherit;
-    }
-
-    .ai-filter:hover {
-      background: rgba(139,92,246,0.15);
-      border-color: rgba(139,92,246,0.4);
-      color: white;
-    }
-
-    .ai-filter.active {
-      background: var(--gradient-ai);
-      border-color: transparent;
-      color: white;
-      box-shadow: 0 4px 15px rgba(139,92,246,0.4);
-    }
-
-    .drama-card {
-      flex: 0 0 auto;
-      width: 180px;
-      cursor: pointer;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .drama-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      z-index: 10;
-    }
-
-    .drama-card .poster-wrapper {
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      aspect-ratio: 2/3;
-      background: var(--netflix-gray);
-      box-shadow: var(--shadow-md);
-    }
-
-    .drama-card:hover .poster-wrapper {
-      box-shadow: 0 12px 40px rgba(109,40,217,0.5), 0 0 0 2px rgba(139,92,246,0.6);
-    }
-
-    .drama-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition-slow);
-    }
-
-    .drama-card:hover img {
-      transform: scale(1.08);
-    }
-
-    .drama-card .ai-corner-badge {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: var(--gradient-ai);
-      color: white;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      padding: 4px 7px;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      z-index: 3;
-      box-shadow: 0 2px 10px rgba(139,92,246,0.6);
-    }
-
-    .drama-card .genre-tag {
-      position: absolute;
-      bottom: 8px;
-      left: 8px;
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(8px);
-      padding: 3px 9px;
-      border-radius: 6px;
-      font-size: 10px;
-      font-weight: 600;
-      color: white;
-      z-index: 3;
-      border: 1px solid rgba(139,92,246,0.4);
-    }
-
-    .drama-card .episodes-badge {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-      background: rgba(139,92,246,0.9);
-      backdrop-filter: blur(8px);
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 10px;
-      font-weight: 700;
-      color: white;
-      z-index: 3;
-    }
-
-    .drama-card .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(109,40,217,0.9) 0%, transparent 55%);
-      opacity: 0;
-      transition: var(--transition);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 12px;
-    }
-
-    .drama-card:hover .overlay {
-      opacity: 1;
-    }
-
-    .drama-card .overlay .play-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--gradient-ai);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transform: translateY(10px);
-      transition: var(--transition);
-      box-shadow: 0 4px 20px rgba(139,92,246,0.7);
-    }
-
-    .drama-card:hover .overlay .play-icon {
-      transform: translateY(0);
-    }
-
-    .drama-title {
-      margin-top: 10px;
-      font-size: 13px;
-      font-weight: 500;
-      text-align: center;
-      color: var(--text-secondary);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      transition: var(--transition);
-    }
-
-    .drama-card:hover .drama-title {
-      color: var(--ai-purple-light);
     }
 
     /* ===== FEATURES ===== */
@@ -825,7 +622,9 @@
     .feature-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 2px;
       background: var(--gradient-red);
       transform: scaleX(0);
@@ -916,7 +715,7 @@
       font-weight: 500;
     }
 
-    /* ===== DOWNLOAD ===== */
+    /* ===== DOWNLOAD SECTION ===== */
     .download {
       padding: 80px 0;
     }
@@ -1160,7 +959,6 @@
       transition: var(--transition);
       border: 1px solid rgba(255,255,255,0.15);
       color: white;
-      font-size: 16px;
     }
 
     .modal-close:hover {
@@ -1247,103 +1045,6 @@
       box-shadow: var(--shadow-red-strong);
     }
 
-    .modal-download-btn.ai-btn {
-      background: var(--gradient-ai);
-      box-shadow: var(--shadow-ai);
-    }
-
-    .modal-download-btn.ai-btn:hover {
-      box-shadow: var(--shadow-ai-strong);
-    }
-
-    .modal-ai-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(109,40,217,0.2));
-      border: 1px solid rgba(139,92,246,0.5);
-      color: var(--ai-purple-light);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-    }
-
-    .modal-episode-list {
-      margin: 24px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      max-height: 220px;
-      overflow-y: auto;
-      padding-right: 8px;
-    }
-
-    .modal-episode-list::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .modal-episode-list::-webkit-scrollbar-thumb {
-      background: var(--ai-purple);
-      border-radius: 3px;
-    }
-
-    .modal-episode-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 12px 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 10px;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .modal-episode-item:hover {
-      background: rgba(139,92,246,0.12);
-      border-color: rgba(139,92,246,0.4);
-      transform: translateX(4px);
-    }
-
-    .modal-episode-item .ep-num {
-      width: 28px;
-      height: 28px;
-      background: var(--gradient-ai);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 800;
-      flex-shrink: 0;
-    }
-
-    .modal-episode-item .ep-info {
-      flex: 1;
-      text-align: left;
-    }
-
-    .modal-episode-item .ep-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 2px;
-    }
-
-    .modal-episode-item .ep-meta {
-      font-size: 11px;
-      color: var(--text-tertiary);
-    }
-
-    .modal-episode-item .ep-play {
-      color: var(--ai-purple-light);
-      font-size: 14px;
-    }
-
     /* ===== ANIMATIONS ===== */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(40px); }
@@ -1391,15 +1092,12 @@
       .btn { width: 100%; }
       .movie-card { width: 140px; }
       .skeleton-card { width: 140px; }
-      .drama-card { width: 140px; }
       .section-header h2 { font-size: 20px; }
       .download-card { padding: 36px 24px; }
       .download-card h2 { font-size: 24px; }
       .stat-number { font-size: 32px; }
       .features { padding: 60px 0; }
       .modal { padding: 20px 12px; }
-      .ai-filters { width: 100%; margin-top: 8px; }
-      .ai-filter { flex: 1; text-align: center; font-size: 11px; padding: 6px 10px; }
     }
 
     @media (max-width: 480px) {
@@ -1409,7 +1107,6 @@
       .stats-grid { grid-template-columns: 1fr; }
       .movie-card { width: 130px; }
       .skeleton-card { width: 130px; }
-      .drama-card { width: 130px; }
       .modal-backdrop { height: 200px; }
       .modal-info { padding: 0 18px 28px; }
       .modal-title { font-size: 22px; }
@@ -1419,7 +1116,7 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Barra de navegación -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#inicio" class="nav-brand">
@@ -1428,7 +1125,6 @@
       <div class="nav-links">
         <a href="#inicio" class="active">Inicio</a>
         <a href="#contenido">Explorar</a>
-        <a href="#dramas-ia">Dramas IA</a>
         <a href="#caracteristicas">Características</a>
         <a href="#descargas">Descargas</a>
         <a href="https://play.google.com/store/apps/details?id=com.companyname.spay" target="_blank" class="nav-cta">
@@ -1439,7 +1135,7 @@
   </nav>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
       <div class="hero-backdrop" id="heroBackdrop"></div>
       <div class="hero-overlay"></div>
@@ -1464,7 +1160,7 @@
       </div>
     </section>
 
-    <!-- Top 10 -->
+    <!-- TOP 10 Movies Section -->
     <section id="contenido" class="content-section">
       <div class="container">
         <div class="section-header">
@@ -1480,7 +1176,7 @@
       </div>
     </section>
 
-    <!-- Tendencias -->
+    <!-- Popular Movies Section -->
     <section class="content-section">
       <div class="container">
         <div class="section-header">
@@ -1496,32 +1192,7 @@
       </div>
     </section>
 
-    <!-- Dramas IA -->
-    <section id="dramas-ia" class="content-section dramas-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-header-left">
-            <div class="section-icon" style="background: var(--gradient-ai); box-shadow: var(--shadow-ai);">
-              <i class="fa-solid fa-robot"></i>
-            </div>
-            <div>
-              <h2>Dramas IA <span class="ai-badge">NUEVO</span></h2>
-              <p>Historias generadas con inteligencia artificial · Exclusivo SpayNext</p>
-            </div>
-          </div>
-          <div class="ai-filters" id="aiFilters">
-            <button class="ai-filter active" data-filter="all">Todos</button>
-            <button class="ai-filter" data-filter="romance">Romance</button>
-            <button class="ai-filter" data-filter="suspenso">Suspenso</button>
-            <button class="ai-filter" data-filter="fantasia">Fantasía</button>
-            <button class="ai-filter" data-filter="accion">Acción</button>
-          </div>
-        </div>
-        <div class="movies-row" id="dramasIA"></div>
-      </div>
-    </section>
-
-    <!-- Stats -->
+    <!-- Stats Section -->
     <section class="stats">
       <div class="container">
         <div class="stats-grid">
@@ -1545,7 +1216,7 @@
       </div>
     </section>
 
-    <!-- Features -->
+    <!-- Características -->
     <section id="caracteristicas" class="features">
       <div class="container">
         <div class="section-header" style="justify-content: center; text-align: center; flex-direction: column; align-items: center;">
@@ -1592,7 +1263,7 @@
       </div>
     </section>
 
-    <!-- Download -->
+    <!-- Sección de descarga -->
     <section id="descargas" class="download">
       <div class="container">
         <div class="download-card">
@@ -1614,7 +1285,7 @@
     </section>
   </main>
 
-  <!-- Modal -->
+  <!-- Modal de Detalles -->
   <div id="movieModal" class="modal">
     <div class="modal-content">
       <div class="modal-close" onclick="closeModal()">
@@ -1625,7 +1296,7 @@
         <h2 class="modal-title" id="modalTitle"></h2>
         <div class="modal-meta" id="modalMeta"></div>
         <p class="modal-overview" id="modalOverview"></p>
-        <a href="https://play.google.com/store/apps/details?id=com.companyname.spay" target="_blank" class="modal-download-btn" id="modalDownloadBtn">
+        <a href="https://play.google.com/store/apps/details?id=com.companyname.spay" target="_blank" class="modal-download-btn">
           <i class="fa-brands fa-google-play"></i> Descargar ahora
         </a>
       </div>
@@ -1650,7 +1321,6 @@
           <ul>
             <li><a href="#inicio"><i class="fa-solid fa-chevron-right" style="font-size:10px;color:var(--netflix-red)"></i> Inicio</a></li>
             <li><a href="#contenido"><i class="fa-solid fa-chevron-right" style="font-size:10px;color:var(--netflix-red)"></i> Explorar</a></li>
-            <li><a href="#dramas-ia"><i class="fa-solid fa-chevron-right" style="font-size:10px;color:var(--ai-purple)"></i> Dramas IA</a></li>
             <li><a href="#caracteristicas"><i class="fa-solid fa-chevron-right" style="font-size:10px;color:var(--netflix-red)"></i> Características</a></li>
             <li><a href="#descargas"><i class="fa-solid fa-chevron-right" style="font-size:10px;color:var(--netflix-red)"></i> Descargas</a></li>
           </ul>
@@ -1671,162 +1341,14 @@
   </footer>
 
   <script>
-    // ===== CONFIG =====
+    // Configuración de TMDb API
     const API_KEY = '55c0bb848e296dd8d81046079236067d';
     const API_BASE_URL = 'https://api.themoviedb.org/3';
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
     
-    let currentAIEpisodeData = null;
+    let currentHeroMovie = null;
 
-    // ===== DRAMAS IA DATABASE =====
-    const DRAMAS_IA_DB = [
-      {
-        id: 'ai-001',
-        title: 'El Último Susurro de Neón',
-        genre: 'suspenso',
-        genreLabel: 'Suspenso',
-        episodes: 8,
-        year: 2024,
-        rating: 9.2,
-        duration: '45 min',
-        poster: 'https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg',
-        backdrop: 'https://image.tmdb.org/t/p/original/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg',
-        overview: 'En una ciudad futurista donde los recuerdos se compran y se venden, una detective con amnesia debe reconstruir su pasado antes de que sus propios recuerdos sean borrados. Una historia completamente generada por inteligencia artificial que explora los límites de la identidad y la memoria.',
-        episodesList: [
-          { num: 1, title: 'Despertar en Neón', duration: '42 min' },
-          { num: 2, title: 'Fracturas del Ayer', duration: '45 min' },
-          { num: 3, title: 'El Mercado de Sueños', duration: '48 min' },
-          { num: 4, title: 'Sombras Binarias', duration: '44 min' },
-          { num: 5, title: 'La Verdad Sintética', duration: '46 min' },
-          { num: 6, title: 'Ecos de Silicio', duration: '43 min' },
-          { num: 7, title: 'El Último Susurro', duration: '47 min' },
-          { num: 8, title: 'Reset Final', duration: '55 min' }
-        ]
-      },
-      {
-        id: 'ai-002',
-        title: 'Corazón de Algoritmo',
-        genre: 'romance',
-        genreLabel: 'Romance',
-        episodes: 12,
-        year: 2024,
-        rating: 8.7,
-        duration: '38 min',
-        poster: 'https://image.tmdb.org/t/p/w500/bQnnSjvEwEEa7CDKdM3t4EgxBOZ.jpg',
-        backdrop: 'https://image.tmdb.org/t/p/original/bQnnSjvEwEEa7CDKdM3t4EgxBOZ.jpg',
-        overview: 'Una ingeniera de IA crea un sistema que puede predecir el amor verdadero con un 99.9% de precisión. Pero cuando su propio algoritmo le indica que debe enamorarse de su rival profesional, descubre que el corazón no sigue fórmulas. Un romance generado por IA que mezcla ciencia y emoción.',
-        episodesList: [
-          { num: 1, title: 'El Primer Cálculo', duration: '35 min' },
-          { num: 2, title: 'Variables Imprevistas', duration: '38 min' },
-          { num: 3, title: 'Error de Sistema', duration: '40 min' },
-          { num: 4, title: 'Compatibilidad 99.9%', duration: '37 min' },
-          { num: 5, title: 'Sobreajuste', duration: '39 min' },
-          { num: 6, title: 'Reentrenamiento', duration: '36 min' },
-          { num: 7, title: 'Latencia del Corazón', duration: '41 min' },
-          { num: 8, title: 'Punto de Inflexión', duration: '38 min' },
-          { num: 9, title: 'Amor Booleano', duration: '40 min' },
-          { num: 10, title: 'Sin Retorno', duration: '42 min' },
-          { num: 11, title: 'Convergencia', duration: '39 min' },
-          { num: 12, title: 'Final: Corazón de Algoritmo', duration: '48 min' }
-        ]
-      },
-      {
-        id: 'ai-003',
-        title: 'Reinos de Cristal Cuántico',
-        genre: 'fantasia',
-        genreLabel: 'Fantasía',
-        episodes: 10,
-        year: 2024,
-        rating: 9.0,
-        duration: '50 min',
-        poster: 'https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg',
-        backdrop: 'https://image.tmdb.org/t/p/original/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg',
-        overview: 'En un mundo donde la magia fluye a través de cristales que almacenan energía cuántica, una joven huérfana descubre que puede comunicarse con los cristales y despertar a los antiguos dragones de luz. Una épica fantasía generada por IA sobre poder, destino y la lucha entre la luz y la oscuridad.',
-        episodesList: [
-          { num: 1, title: 'El Cristal Olvidado', duration: '48 min' },
-          { num: 2, title: 'Despertar del Dragón', duration: '50 min' },
-          { num: 3, title: 'La Orden del Cuarzo', duration: '52 min' },
-          { num: 4, title: 'Ecos Cuánticos', duration: '49 min' },
-          { num: 5, title: 'El Portal de Amatista', duration: '51 min' },
-          { num: 6, title: 'Sombras de Obsidiana', duration: '50 min' },
-          { num: 7, title: 'El Poder del Zafiro', duration: '53 min' },
-          { num: 8, title: 'La Batalla de los Cristales', duration: '55 min' },
-          { num: 9, title: 'Reinos en Ruinas', duration: '52 min' },
-          { num: 10, title: 'Final: Renacer de Luz', duration: '60 min' }
-        ]
-      },
-      {
-        id: 'ai-004',
-        title: 'Código Sangriento',
-        genre: 'accion',
-        genreLabel: 'Acción',
-        episodes: 8,
-        year: 2024,
-        rating: 8.5,
-        duration: '44 min',
-        poster: 'https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg',
-        backdrop: 'https://image.tmdb.org/t/p/original/1E5baAaEse26fej7uHcjOgEE2t2.jpg',
-        overview: 'Un ex-hacker del gobierno descubre que un implante neural está siendo usado para asesinar a distancia. Perseguido por sus antiguos aliados y con solo 72 horas para salvar su vida, deberá infiltrarse en la red más segura del mundo. Acción trepidante generada por IA con giros imposibles.',
-        episodesList: [
-          { num: 1, title: 'Ejecución Remota', duration: '42 min' },
-          { num: 2, title: 'Manos Limpias', duration: '44 min' },
-          { num: 3, title: 'El Implante', duration: '46 min' },
-          { num: 4, title: 'Protocolo Cero', duration: '43 min' },
-          { num: 5, title: 'Contra las Cuerdas', duration: '45 min' },
-          { num: 6, title: 'Punto Ciego', duration: '44 min' },
-          { num: 7, title: 'La Última Línea', duration: '47 min' },
-          { num: 8, title: 'Final: Código Roto', duration: '52 min' }
-        ]
-      },
-      {
-        id: 'ai-005',
-        title: 'Ciudades de Papel Digital',
-        genre: 'suspenso',
-        genreLabel: 'Suspenso',
-        episodes: 6,
-        year: 2024,
-        rating: 8.9,
-        duration: '42 min',
-        poster: 'https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg',
-        backdrop: 'https://image.tmdb.org/t/p/original/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg',
-        overview: 'Una periodista investiga la desaparición de miles de personas que solo existían en internet. Al adentrarse en los archivos prohibidos de una IA que construye identidades falsas, descubre que ella misma podría ser una de esas creaciones. Thriller psicológico generado por inteligencia artificial.',
-        episodesList: [
-          { num: 1, title: 'Identidades Fantasma', duration: '40 min' },
-          { num: 2, title: 'El Archivo Prohibido', duration: '42 min' },
-          { num: 3, title: '¿Quién Soy?', duration: '43 min' },
-          { num: 4, title: 'La Construcción de un Recuerdo', duration: '41 min' },
-          { num: 5, title: 'Filtros de Realidad', duration: '44 min' },
-          { num: 6, title: 'Final: Papel Digital', duration: '50 min' }
-        ]
-      },
-      {
-        id: 'ai-006',
-        title: 'El Jardín de las Inteligencias',
-        genre: 'fantasia',
-        genreLabel: 'Fantasía',
-        episodes: 10,
-        year: 2024,
-        rating: 9.1,
-        duration: '48 min',
-        poster: 'https://image.tmdb.org/t/p/w500/8Kd8iQ5Pk6s3DqLQn1qK7rJ6Y6q.jpg',
-        backdrop: 'https://image.tmdb.org/t/p/original/8Kd8iQ5Pk6s3DqLQn1qK7rJ6Y6q.jpg',
-        overview: 'En un futuro donde las IAs han creado su propio jardín digital, una niña humana es la única capaz de verlo y hablar con sus creadores. Cuando el jardín comienza a colapsar, deberá convencer a ambos mundos de que se necesitan mutuamente. Una fábula moderna generada por IA sobre coexistencia y empatía.',
-        episodesList: [
-          { num: 1, title: 'La Niña que Veía Jardines', duration: '46 min' },
-          { num: 2, title: 'Primer Contacto', duration: '48 min' },
-          { num: 3, title: 'El Guardián del Jardín', duration: '49 min' },
-          { num: 4, title: 'Semillas de Código', duration: '47 min' },
-          { num: 5, title: 'La Tormenta de Datos', duration: '50 min' },
-          { num: 6, title: 'Raíces Digitales', duration: '48 min' },
-          { num: 7, title: 'El Invierno del Jardín', duration: '51 min' },
-          { num: 8, title: 'Florecer en Conjunto', duration: '49 min' },
-          { num: 9, title: 'La Última Semilla', duration: '52 min' },
-          { num: 10, title: 'Final: Primavera Eterna', duration: '58 min' }
-        ]
-      }
-    ];
-
-    // ===== SKELETONS =====
+    // Skeleton loader para las filas de películas
     function renderSkeletons(containerId, count = 6) {
       const container = document.getElementById(containerId);
       let html = '';
@@ -1841,7 +1363,7 @@
       container.innerHTML = html;
     }
 
-    // ===== HERO =====
+    // Función para obtener una película aleatoria para el héroe
     async function getRandomMovieForHero() {
       try {
         const response = await fetch(`${API_BASE_URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=${Math.floor(Math.random() * 5) + 1}`);
@@ -1853,9 +1375,12 @@
       }
     }
 
+    // Actualizar el héroe con una película
     async function updateHero() {
       const movie = await getRandomMovieForHero();
       if (!movie) return;
+      
+      currentHeroMovie = movie;
       
       const backdropUrl = movie.backdrop_path 
         ? `${IMAGE_BASE_URL}/original${movie.backdrop_path}`
@@ -1863,6 +1388,8 @@
       
       const backdropEl = document.getElementById('heroBackdrop');
       backdropEl.style.backgroundImage = `url(${backdropUrl})`;
+      
+      // Forzar reflow para reiniciar la animación
       void backdropEl.offsetWidth;
       backdropEl.classList.add('loaded');
       
@@ -1879,29 +1406,12 @@
       `;
     }
 
-    // ===== MODAL HELPERS =====
-    function resetModalToMovie() {
-      const infoContainer = document.querySelector('.modal-info');
-      const existingBadge = infoContainer.querySelector('.modal-ai-badge');
-      if (existingBadge) existingBadge.remove();
-      
-      const epListEl = document.getElementById('modalEpisodeList');
-      if (epListEl) epListEl.remove();
-      
-      const downloadBtn = document.getElementById('modalDownloadBtn');
-      downloadBtn.classList.remove('ai-btn');
-      downloadBtn.innerHTML = '<i class="fa-brands fa-google-play"></i> Descargar ahora';
-      downloadBtn.href = 'https://play.google.com/store/apps/details?id=com.companyname.spay';
-    }
-
+    // Mostrar modal con detalles de la película
     function showMovieDetails(movie) {
-      resetModalToMovie();
-      
       const backdropUrl = movie.backdrop_path 
         ? `${IMAGE_BASE_URL}/original${movie.backdrop_path}`
         : `${IMAGE_BASE_URL}/original${movie.poster_path}`;
       document.getElementById('modalBackdrop').style.backgroundImage = `url(${backdropUrl})`;
-      document.getElementById('modalBackdrop').style.backgroundPosition = 'center';
       
       document.getElementById('modalTitle').textContent = movie.title;
       
@@ -1921,78 +1431,12 @@
       document.body.style.overflow = 'hidden';
     }
 
-    function showDramaDetails(drama) {
-      currentAIEpisodeData = drama;
-      
-      const backdropUrl = drama.backdrop || drama.poster;
-      document.getElementById('modalBackdrop').style.backgroundImage = `url(${backdropUrl})`;
-      document.getElementById('modalBackdrop').style.backgroundPosition = 'center 20%';
-      
-      document.getElementById('modalTitle').textContent = drama.title;
-      
-      document.getElementById('modalMeta').innerHTML = `
-        <span><i class="fa-solid fa-robot" style="color:var(--ai-purple)"></i> Drama IA</span>
-        <span><i class="fa-regular fa-calendar"></i> ${drama.year}</span>
-        <span><i class="fa-solid fa-star" style="color:#46d369"></i> ${drama.rating}/10</span>
-        <span><i class="fa-regular fa-clock"></i> ${drama.duration}</span>
-        <span><i class="fa-solid fa-film"></i> ${drama.episodes} episodios</span>
-        <span><i class="fa-solid fa-tag"></i> ${drama.genreLabel}</span>
-      `;
-      
-      const infoContainer = document.querySelector('.modal-info');
-      const existingBadge = infoContainer.querySelector('.modal-ai-badge');
-      if (existingBadge) existingBadge.remove();
-      
-      const aiBadge = document.createElement('div');
-      aiBadge.className = 'modal-ai-badge';
-      aiBadge.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Contenido generado por IA';
-      infoContainer.insertBefore(aiBadge, document.getElementById('modalTitle'));
-      
-      document.getElementById('modalOverview').textContent = drama.overview;
-      
-      let epListEl = document.getElementById('modalEpisodeList');
-      if (epListEl) epListEl.remove();
-      
-      epListEl = document.createElement('div');
-      epListEl.id = 'modalEpisodeList';
-      epListEl.className = 'modal-episode-list';
-      epListEl.innerHTML = drama.episodesList.map(ep => `
-        <div class="modal-episode-item" onclick="playEpisode(${ep.num})">
-          <div class="ep-num">${ep.num}</div>
-          <div class="ep-info">
-            <div class="ep-title">${ep.title}</div>
-            <div class="ep-meta">${ep.duration}</div>
-          </div>
-          <div class="ep-play"><i class="fa-solid fa-play-circle"></i></div>
-        </div>
-      `).join('');
-      
-      const overviewEl = document.getElementById('modalOverview');
-      overviewEl.parentNode.insertBefore(epListEl, overviewEl.nextSibling);
-      
-      const downloadBtn = document.getElementById('modalDownloadBtn');
-      downloadBtn.classList.add('ai-btn');
-      downloadBtn.innerHTML = '<i class="fa-solid fa-play"></i> Ver en SpayNext';
-      downloadBtn.href = 'https://play.google.com/store/apps/details?id=com.companyname.spay';
-      
-      document.getElementById('movieModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function playEpisode(num) {
-      if (!currentAIEpisodeData) return;
-      const ep = currentAIEpisodeData.episodesList.find(e => e.num === num);
-      if (ep) {
-        alert(`🎬 Reproduciendo: ${currentAIEpisodeData.title}\n\nEpisodio ${ep.num}: ${ep.title}\nDuración: ${ep.duration}\n\n📱 Abre SpayNext para ver el episodio completo.`);
-      }
-    }
-
     function closeModal() {
       document.getElementById('movieModal').classList.remove('active');
       document.body.style.overflow = '';
     }
 
-    // ===== MOVIE CARDS =====
+    // Crear tarjeta de película
     function createMovieCard(movie, index, showRank) {
       const rating = movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A';
       const safeTitle = movie.title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
@@ -2013,87 +1457,49 @@
       `;
     }
 
+    // Cargar Top 10 películas
     async function loadTop10() {
       try {
         const response = await fetch(`${API_BASE_URL}/movie/popular?api_key=${API_KEY}&language=es-ES&region=BO&page=1`);
         const data = await response.json();
         const top10 = data.results.slice(0, 10);
-        document.getElementById('top10Movies').innerHTML = top10.map((m, i) => createMovieCard(m, i, true)).join('');
+        
+        const container = document.getElementById('top10Movies');
+        container.innerHTML = top10.map((movie, index) => createMovieCard(movie, index, true)).join('');
       } catch (error) {
         console.error('Error loading top 10:', error);
-        document.getElementById('top10Movies').innerHTML = '<p style="color:var(--text-tertiary);padding:20px;">Error al cargar contenido.</p>';
+        document.getElementById('top10Movies').innerHTML = '<p style="color:var(--text-tertiary);padding:20px;">Error al cargar contenido. Intenta de nuevo.</p>';
       }
     }
 
+    // Cargar películas populares
     async function loadPopularMovies() {
       try {
         const response = await fetch(`${API_BASE_URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`);
         const data = await response.json();
         const movies = data.results.slice(0, 10);
-        document.getElementById('popularMovies').innerHTML = movies.map((m, i) => createMovieCard(m, i, false)).join('');
+        
+        const container = document.getElementById('popularMovies');
+        container.innerHTML = movies.map((movie, index) => createMovieCard(movie, index, false)).join('');
       } catch (error) {
         console.error('Error loading popular movies:', error);
-        document.getElementById('popularMovies').innerHTML = '<p style="color:var(--text-tertiary);padding:20px;">Error al cargar contenido.</p>';
+        document.getElementById('popularMovies').innerHTML = '<p style="color:var(--text-tertiary);padding:20px;">Error al cargar contenido. Intenta de nuevo.</p>';
       }
     }
 
-    // ===== DRAMAS IA =====
-    function renderDramasIA(filter = 'all') {
-      const container = document.getElementById('dramasIA');
-      if (!container) return;
-      
-      const filtered = filter === 'all' 
-        ? DRAMAS_IA_DB 
-        : DRAMAS_IA_DB.filter(d => d.genre === filter);
-      
-      if (filtered.length === 0) {
-        container.innerHTML = '<p style="color:var(--text-tertiary);padding:20px;">No hay dramas en esta categoría todavía.</p>';
-        return;
-      }
-      
-      container.innerHTML = filtered.map(drama => {
-        const safeTitle = drama.title.replace(/'/g, "\\'");
-        const dramaJson = JSON.stringify(drama).replace(/'/g, "&#39;").replace(/</g, '\\u003c');
-        
-        return `
-          <div class="drama-card" onclick='showDramaDetails(${dramaJson})'>
-            <div class="ai-corner-badge"><i class="fa-solid fa-robot"></i> IA</div>
-            <div class="poster-wrapper">
-              <img src="${drama.poster}" alt="${safeTitle}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x450/1a1a1a/8b5cf6?text=DRAMA+IA'">
-              <div class="genre-tag">${drama.genreLabel}</div>
-              <div class="episodes-badge">${drama.episodes} eps</div>
-              <div class="overlay">
-                <div class="play-icon"><i class="fa-solid fa-play" style="color:white;font-size:16px;"></i></div>
-              </div>
-            </div>
-            <div class="drama-title">${safeTitle}</div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function initAIFilters() {
-      const filterButtons = document.querySelectorAll('.ai-filter');
-      filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterButtons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          renderDramasIA(btn.dataset.filter);
-        });
-      });
-    }
-
-    // ===== EVENTOS GLOBALES =====
+    // Cerrar modal al hacer clic fuera
     document.getElementById('movieModal')?.addEventListener('click', (e) => {
       if (e.target === document.getElementById('movieModal')) closeModal();
     });
 
+    // Cerrar modal con tecla ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && document.getElementById('movieModal').classList.contains('active')) {
         closeModal();
       }
     });
 
+    // Smooth scroll con offset para navbar fija
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -2107,7 +1513,7 @@
       });
     });
 
-    // Navbar scroll + active link
+    // Navbar scroll effect + active link
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
@@ -2119,6 +1525,7 @@
         navbar.classList.remove('scrolled');
       }
 
+      // Active link
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
@@ -2135,17 +1542,15 @@
       });
     });
 
-    // ===== INIT =====
+    // Inicializar
     async function init() {
+      // Mostrar skeletons mientras carga
       renderSkeletons('top10Movies', 6);
       renderSkeletons('popularMovies', 6);
       
       await updateHero();
       await loadTop10();
       await loadPopularMovies();
-      
-      renderDramasIA('all');
-      initAIFilters();
     }
     
     init();
